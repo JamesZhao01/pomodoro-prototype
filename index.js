@@ -8,9 +8,9 @@ let next_id = 0;
 
 
 const max_times = {
-    "work": 5000,
-    "short break": 3000,
-    "long break": 6000,
+    "work": 3000,
+    "short break": 2000,
+    "long break": 4000,
 }
 const updateUI = (time) => {
     document.getElementById("cycle").innerText = time;
