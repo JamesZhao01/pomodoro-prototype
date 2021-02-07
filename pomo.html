@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="index.js"></script>
+    <style>
+        .none {
+            display: none;
+        }
+
+        .w {
+            color: red;
+        }
+
+        .s {
+            color: green;
+        }
+
+        .l {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>POMODORO MAGIC</h1>
+        <div>Currently on: <span id="status"></span> | Timer: <span id="cycle"></span>/<span id="max-cycle"></span>
+        </div>
+        <div>cycles finished: <span id="cycles-done">0</span></div>
+        <div>Pomos finished: <span id="pomos-done">0</span></div>
+        <button onclick="start()" id="begin">Begin</button>
+        <button onclick="end()" id="end" class="none">End</button>
+    </section>
+    <section>
+        <table>
+            <tr>
+                <th>Session id</th>
+                <th>Cycles Done</th>
+                <th>Pomos Done</th>
+            </tr>
+        </table>
+    </section>
+</body>
+
+
+</html>
