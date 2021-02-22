@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <link href="style1.css" type="text/css" rel="stylesheet" id="t1ss" class="toggle">
+    <link href="style2.css" type="text/css" rel="stylesheet" id="t2ss" class="toggle">
+    <link href="style3.css" type="text/css" rel="stylesheet" id="t3ss" class="toggle">
+</head>
+
+<body>
+
+</body>
+<button id="t1">t1</button>
+<button id="t2">t2</button>
+<button id="t3">t3</button>
+<script>
+    let buttons = document.getElementsByTagName("button");
+    for (const el of buttons) {
+        el.addEventListener("click", (e) => {
+            console.log(e.target.id);
+            let links = document.getElementsByClassName("toggle");
+            for (let link of links) {
+                link.disabled = true;
+            }
+            document.querySelector(`#${e.target.id}ss`).disabled = false;
+        })
+    }
+</script>
+
+</html>

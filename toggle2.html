@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <link href="style4.css" type="text/css" rel="stylesheet" id="t1ss" class="toggle">
+</head>
+
+<body class="default">
+    <div style="width: 500px; height: 500px" class="container"></div>
+    <button id="t1" target="red">t1</button>
+    <button id="t2" target="blue">t2</button>
+    <button id="t3" target="green">t3</button>
+</body>
+
+<script>
+
+    let buttons = document.getElementsByTagName("button");
+    for (const el of buttons) {
+        el.addEventListener("click", (e) => {
+            console.log(e.target);
+            document.querySelector("body").className = e.target.getAttribute("target");
+        })
+    }
+</script>
+
+</html>

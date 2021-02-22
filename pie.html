@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #pieobj {
+            --turn: 0deg;
+            --from: black;
+            --to: lime;
+        }
+
+        .pie,
+        .pie2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--from);
+            background-image:
+                linear-gradient(to right, transparent 50%, var(--to) 0);
+            position: relative;
+        }
+
+        .pie::before,
+        .pie2::before {
+            content: " ";
+            display: block;
+            margin-left: 50%;
+            height: 100%;
+            border-radius: 0 100% 100% 0 / 50%;
+            background-color: inherit;
+            transform-origin: left;
+            transform: rotate(var(--turn))
+        }
+
+        .pie2::before {
+            background-color: var(--to);
+        }
+
+        #mask {
+            background-color: white;
+            width: 90%;
+            height: 90%;
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100%;
+        }
+
+        #mask:before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pieobj" class="pie">
+        <div id="mask">0</div>
+    </div>
+    <input type="range" id="piei" name="piei" min="0" max="360" value="0">
+    <script>
+        document.querySelector("#piei").addEventListener("input", (e) => {
+            let value = e.target.value;
+            document.querySelector("#mask").innerHTML = value;
+            if (value <= 180) {
+                document.querySelector("#pieobj").className = "pie";
+                document.querySelector("#pieobj").style.setProperty("--turn", `${value}deg`)
+            } else {
+                document.querySelector("#pieobj").className = "pie2";
+                document.querySelector("#pieobj").style.setProperty("--turn", `${(value - 180)}deg`)
+            }
+
+        })
+    </script>
+</body>
+
+</html>

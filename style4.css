@@ -1,0 +1,18 @@
+.default .container {
+    background-color: red;
+}
+
+.red .container {
+    background-color: red;
+    transition: 0.4s;
+}
+
+.blue .container {
+    background-color: blue;
+    transition: 0.4s;
+}
+
+.green .container {
+    background-color: green;
+    transition: 0.4s;
+}
